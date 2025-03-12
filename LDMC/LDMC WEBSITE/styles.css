@@ -1,0 +1,443 @@
+/* Hover Line Effect with Green Gradient */
+.hover-underline {
+    position: relative;
+    display: inline-block;
+    font-size: 1rem;
+    font-weight: bold;
+    color: #0F6C37;
+    /* Default text color */
+    transition: color 0.3s ease-in-out;
+}
+
+.hover-underline::after,
+.hover-underline::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(to right, #00ff00, #008000);
+    left: 0;
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform 0.4s ease-out;
+}
+
+.hover-underline::before {
+    top: -5px;
+    /* Upper line */
+    transform-origin: left;
+}
+
+.hover-underline::after {
+    bottom: -5px;
+    /* Lower line */
+    transform-origin: right;
+}
+
+.hover-underline:hover {
+    color: #028f3e;
+    /* Brighter green on hover */
+}
+
+.hover-underline:hover::after,
+.hover-underline:hover::before {
+    transform: scaleX(1);
+}
+
+/* Dropdown Links with Green Hover Underline */
+#patientContent a,
+#healthcareContent a,
+#labManagerContent a,
+#businessContent a {
+    position: relative;
+    display: inline-block;
+    font-size: 1rem;
+    font-weight: bold;
+    color: #ffffff;
+    transition: color 0.3s ease-in-out;
+}
+
+#patientContent a::after,
+#patientContent a::before,
+#healthcareContent a::after,
+#healthcareContent a::before,
+#labManagerContent a::after,
+#labManagerContent a::before,
+#businessContent a::after,
+#businessContent a::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(to right, #00ff00, #008000);
+    left: 0;
+    transform: scaleX(0);
+    transition: transform 0.4s ease-out;
+}
+
+#patientContent a::before,
+#healthcareContent a::before,
+#labManagerContent a::before,
+#businessContent a::before {
+    top: -5px;
+    /* Upper line */
+    transform-origin: left;
+}
+
+#patientContent a::after,
+#healthcareContent a::after,
+#labManagerContent a::after,
+#businessContent a::after {
+    bottom: -5px;
+    /* Lower line */
+    transform-origin: right;
+}
+
+#patientContent a:hover,
+#healthcareContent a:hover,
+#labManagerContent a:hover,
+#businessContent a:hover {
+    color: #c8facc;
+    /* Lighter green on hover */
+}
+
+#patientContent a:hover::after,
+#patientContent a:hover::before,
+#healthcareContent a:hover::after,
+#healthcareContent a:hover::before,
+#labManagerContent a:hover::after,
+#labManagerContent a:hover::before,
+#businessContent a:hover::after,
+#businessContent a:hover::before {
+    transform: scaleX(1);
+}
+
+
+.logo {
+    max-height: 70px;
+    width: auto;
+}
+
+/* Global styles */
+body {
+    font-family: 'Inter', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f7fafc;
+}
+
+a {
+    text-decoration: none;
+}
+
+/* Header */
+header {
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+header .text-gray-700 {
+    transition: color 0.3s ease;
+}
+
+header .text-gray-700:hover {
+    color: #0F6C37;
+}
+
+/* Navigation Buttons */
+nav ul {
+    display: flex;
+    list-style: none;
+}
+
+.group:hover .hidden {
+    display: flex;
+}
+
+.hover-line::after {
+    content: "";
+    display: block;
+    width: 0;
+    height: 2px;
+    background: white;
+    transition: width 0.3s;
+}
+
+.hover-line:hover::after {
+    width: 100%;
+}
+
+.nav-btn {
+    background: none;
+    border: none;
+    font-size: 16px;
+    cursor: pointer;
+    font-weight: bold;
+    padding: 12px 18px;
+    /* Added padding for better click area */
+    transition: background 0.3s ease, color 0.3s ease;
+    border-radius: 5px;
+}
+
+.nav-btn:hover,
+.nav-btn:focus {
+    background: #f0f0f0;
+    color: #0F6C37;
+}
+
+.dropdown {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: white;
+    border: 1px solid #ccc;
+    padding: 10px;
+    display: none;
+    flex-direction: column;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    min-width: 200px;
+    z-index: 10;
+}
+
+.dropdown a {
+    padding: 8px 12px;
+    text-decoration: none;
+    display: block;
+    color: black;
+}
+
+.dropdown a:hover {
+    background: #f0f0f0;
+}
+
+/* Hero Section */
+section.bg-green-900 {
+    background: linear-gradient(to right, #0F6C37, #028f3e);
+}
+
+section.bg-green-900 h1 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    line-height: 1.3;
+}
+
+section.bg-green-900 button {
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+section.bg-green-900 button:hover {
+    background-color: #0C5A2B;
+    transform: scale(1.05);
+}
+
+/* Tabs Section */
+div.bg-white.py-4 {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+button.tab-active {
+    border-bottom: 2px solid #0F6C37;
+    font-weight: bold;
+    color: #0F6C37;
+    transition: color 0.3s ease;
+}
+
+button:hover {
+    color: #0F6C37;
+}
+
+/* Services Section */
+section.grid {
+    padding-top: 40px;
+}
+
+section.grid div {
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+section.grid div:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Community,Health & Wellness,Technology & Innovation,News & Trends */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f8f9fa;
+}
+
+.news-section {
+    max-width: 1200px;
+    margin: auto;
+    padding: 20px;
+    text-align: center;
+}
+
+.tabs {
+    display: flex;
+    justify-content: center;
+    /* Center horizontally */
+    gap: 20px;
+    border-bottom: 2px solid #ddd;
+    padding-bottom: 10px;
+    /* Para may space sa baba */
+}
+
+.tab-btn {
+    background: none;
+    border: none;
+    font-size: 16px;
+    padding: 10px 15px;
+    position: relative;
+    cursor: pointer;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.tab-btn::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -2px;
+    width: 0;
+    height: 3px;
+    background-color: #0F6C37;
+    /* Line color */
+    transition: width 0.3s ease-in-out;
+}
+
+.tab-btn:hover::after,
+.tab-btn.active::after {
+    width: 100%;
+}
+
+.tab-content {
+    display: none;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 15px;
+    justify-content: center;
+}
+
+.tab-content.active {
+    display: grid;
+}
+
+.news-card {
+    background: white;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    text-align: left;
+    width: 100%;
+}
+
+.news-card img {
+    width: 100%;
+    height: 150px;
+    border-radius: 5px;
+    object-fit: cover;
+}
+
+.category {
+    font-size: 14px;
+    font-weight: bold;
+    color: #6c757d;
+}
+
+h3 {
+    font-size: 16px;
+}
+
+
+
+/* Footer */
+footer.bg-green-900 {
+    background-color: #0F6C37;
+}
+
+footer h3 {
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+footer button {
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+footer button:hover {
+    background-color: #0C5A2B;
+    transform: scale(1.05);
+}
+
+footer .border-t {
+    border-color: #e2e8f0;
+}
+
+footer p {
+    font-size: 0.875rem;
+}
+
+
+/* Hover Line Effect for Links */
+.hover-line {
+    position: relative;
+    display: inline-block;
+}
+
+.hover-line::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -2px;
+    width: 100%;
+    height: 2px;
+    background-color: white;
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.3s ease-out;
+}
+
+.hover-line:hover::after {
+    transform: scaleX(1);
+}
+
+/* Spin Loading Message Sent  in Contact Us */
+
+@keyframes popIn {
+    0% {
+        transform: scale(0);
+        opacity: 0;
+    }
+
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+@keyframes rotateCheck {
+    0% {
+        transform: rotate(0deg) scale(0);
+        opacity: 0;
+    }
+
+    100% {
+        transform: rotate(360deg) scale(1);
+        opacity: 1;
+    }
+}
+
+.animate-popup {
+    animation: popIn 0.3s ease-out;
+}
+
+.animate-check {
+    animation: rotateCheck 0.5s ease-out;
+}

@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - Sanroque Laboratory</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body class="bg-gray-100 flex flex-col justify-center items-center min-h-screen">
+
+    <div id="headerContainer"></div> <!-- Header Placeholder -->
+
+    <div class="flex flex-col items-center w-full max-w-5xl py-20 space-y-10">
+        <!-- Main Inquiry Container -->
+        <div
+            class="bg-white p-12 rounded-lg shadow-lg w-full max-w-4xl transition-transform duration-300 ease-in-out transform hover:scale-105">
+            <h2 class="text-4xl font-bold mb-8 text-green-700 text-center mx-auto">Contact Us</h2>
+
+            <!-- Main Dropdown -->
+            <label class="block mb-4 text-xl font-medium text-green-600">Select Inquiry:</label>
+            <select id="mainCategory"
+                class="w-full p-4 border border-gray-300 rounded-lg focus:outline-none focus:ring-4 focus:ring-blue-400 hover:bg-gray-100 transition-all text-lg">
+                <option value="">-- Select --</option>
+                <option value="patient">Patient</option>
+                <option value="hospital">Hospital or Health System</option>
+                <option value="professional">Healthcare Professional</option>
+                <option value="collection">Drug Testing Collection Site (non Quest Diagnostics)</option>
+            </select>
+        </div>
+
+        <!-- Sub Category Container, Initially Hidden -->
+        <div id="subCategoryContainer"
+            class="hidden bg-white p-12 rounded-lg shadow-lg w-full max-w-4xl transition-opacity duration-300 ease-in-out">
+            <label class="block mb-4 text-xl font-medium text-green-600">Select Category:</label>
+            <select id="subCategory"
+                class="w-full p-4 border border-gray-300 rounded-lg focus:outline-none focus:ring-4 focus:ring-blue-400 hover:bg-gray-100 transition-all text-lg">
+                <option value="">-- Select --</option>
+            </select>
+        </div>
+
+        <!-- Collapsible Help Topics Section -->
+        <div id="helpTopics"
+            class="bg-white p-12 rounded-lg shadow-lg w-full max-w-4xl transition-opacity duration-300 ease-in-out">
+            <h2 class="text-3xl font-bold mb-6 text-gray-700">Browse Common Help Topics</h2>
+            <div class="space-y-4">
+                <div class="border border-green-600 rounded-lg overflow-hidden">
+                    <button
+                        class="w-full text-left p-5 font-semibold text-green-600 flex justify-between items-center hover:bg-green-100 transition-all text-lg"
+                        onclick="toggleCollapse('topic1', this)">
+                        For EHR Vendors <span>+</span>
+                    </button>
+                    <div id="topic1" class="hidden p-5 text-gray-700">Details about Drug Testing Collection Site.</div>
+                </div>
+                <div class="border border-green-600 rounded-lg overflow-hidden">
+                    <button
+                        class="w-full text-left p-5 font-semibold text-green-600 flex justify-between items-center hover:bg-green-100 transition-all text-lg"
+                        onclick="toggleCollapse('topic2', this)">
+                        For Employer (Drug Screening) <span>+</span>
+                    </button>
+                    <div id="topic2" class="hidden p-5 text-gray-700">Details about Drug Testing Collection Site.</div>
+                </div>
+                <div class="border border-green-600 rounded-lg overflow-hidden">
+                    <button
+                        class="w-full text-left p-5 font-semibold text-green-600 flex justify-between items-center hover:bg-green-100 transition-all text-lg"
+                        onclick="toggleCollapse('topic3', this)">
+                        For Government Employee <span>+</span>
+                    </button>
+                    <div id="topic3" class="hidden p-5 text-gray-700">Details about Drug Testing Collection Site.</div>
+                </div>
+                <div class="border border-green-600 rounded-lg overflow-hidden">
+                    <button
+                        class="w-full text-left p-5 font-semibold text-green-600 flex justify-between items-center hover:bg-green-100 transition-all text-lg"
+                        onclick="toggleCollapse('topic4', this)">
+                        For Drug Testing Collection Site (non Quest Diagnostics) <span>+</span>
+                    </button>
+                    <div id="topic4" class="hidden p-5 text-gray-700">Details about Drug Testing Collection Site.</div>
+                </div>
+                <div class="border border-green-600 rounded-lg overflow-hidden">
+                    <button
+                        class="w-full text-left p-5 font-semibold text-green-600 flex justify-between items-center hover:bg-green-100 transition-all text-lg"
+                        onclick="toggleCollapse('topic5', this)">
+                        For Drug Testing Participant <span>+</span>
+                    </button>
+                    <div id="topic5" class="hidden p-5 text-gray-700">Details about Drug Testing Participant.</div>
+                </div>
+                <div class="border border-green-600 rounded-lg overflow-hidden">
+                    <button
+                        class="w-full text-left p-5 font-semibold text-green-600 flex justify-between items-center hover:bg-green-100 transition-all text-lg"
+                        onclick="toggleCollapse('topic6', this)">
+                        For Employer (Drug Screening) <span>+</span>
+                    </button>
+                    <div id="topic6" class="hidden p-5 text-gray-700">Details about Employer Drug Screening.</div>
+                </div>
+                <div class="border border-green-600 rounded-lg overflow-hidden">
+                    <button
+                        class="w-full text-left p-5 font-semibold text-green-600 flex justify-between items-center hover:bg-green-100 transition-all text-lg"
+                        onclick="toggleCollapse('topic7', this)">
+                        For Healthcare Professional <span>+</span>
+                    </button>
+                    <div id="topic7" class="hidden p-5 text-gray-700">Details about Employer Drug Screening.</div>
+                </div>
+                <div class="border border-green-600 rounded-lg overflow-hidden">
+                    <button
+                        class="w-full text-left p-5 font-semibold text-green-600 flex justify-between items-center hover:bg-green-100 transition-all text-lg"
+                        onclick="toggleCollapse('topic8', this)">
+                        For Job Seeker <span>+</span>
+                    </button>
+                    <div id="topic8" class="hidden p-5 text-gray-700">Details about Employer Drug Screening.</div>
+                </div>
+                <div class="border border-green-600 rounded-lg overflow-hidden">
+                    <button
+                        class="w-full text-left p-5 font-semibold text-green-600 flex justify-between items-center hover:bg-green-100 transition-all text-lg"
+                        onclick="toggleCollapse('topic9', this)">
+                        For Patient <span>+</span>
+                    </button>
+                    <div id="topic9" class="hidden p-5 text-gray-700">Details about Employer Drug Screening.</div>
+                </div>
+                <div class="border border-green-600 rounded-lg overflow-hidden">
+                    <button
+                        class="w-full text-left p-5 font-semibold text-green-600 flex justify-between items-center hover:bg-green-100 transition-all text-lg"
+                        onclick="toggleCollapse('topic10', this)">
+                        For Supplier or potential supplier <span>+</span>
+                    </button>
+                    <div id="topic10" class="hidden p-5 text-gray-700">Details about Employer Drug Screening.</div>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- Contact Form -->
+        <form id="contactForm" action="https://formspree.io/f/mwpvdgyk" method="POST"
+            class="bg-white p-6 rounded-lg shadow-lg w-full max-w-4xl space-y-4">
+            <h2 class="text-2xl font-bold text-green-700">Send us a message</h2>
+
+            <label class="block text-lg font-medium text-black-600">Your Name:</label>
+            <input type="text" name="name"
+                class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-400" required>
+
+            <label class="block text-lg font-medium text-black-600">Your Email:</label>
+            <input type="email" name="email"
+                class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-400" required>
+
+            <label class="block text-lg font-medium text-black-600">Message:</label>
+            <textarea name="message" rows="5"
+                class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-400"
+                required></textarea>
+
+            <button type="submit"
+                class="w-full bg-green-700 text-white py-4 rounded-lg font-bold hover:bg-green-800 active:bg-green-700 active:text-white focus:bg-green-700 focus:text-white !text-white">Send
+                Message</button>
+
+            <!-- Success Popup Modal -->
+            <div id="successModal" class="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 hidden">
+                <div class="bg-white p-8 rounded-lg shadow-lg flex flex-col items-center space-y-4 w-96">
+                    <!-- Animated Circle with Spinner -->
+                    <div id="iconWrapper"
+                        class="w-20 h-20 flex items-center justify-center rounded-full border-4 border-gray-300">
+                        <div id="loadingSpinner"
+                            class="w-10 h-10 border-4 border-green-600 border-t-transparent rounded-full animate-spin">
+                        </div>
+                        <span id="successIcon" class="hidden text-green-600 text-5xl">✔</span>
+                    </div>
+
+                    <!-- Success Message -->
+                    <p id="successText" class="text-lg font-semibold text-gray-700">Sending...</p>
+                </div>
+            </div>
+        </form>
+    </div>
+    </div>
+
+    <footer class="bg-[#034c1f] text-white p-4 w-full">
+        <div class="flex flex-col items-center text-center">
+            <h3 class="text-lg font-bold text-white-700">Follow us on</h3>
+            <div class="flex justify-center gap-6 mt-3">
+                <!-- Facebook -->
+                <a href="https://facebook.com" target="_blank" rel="noopener noreferrer"
+                    class="text-blue-600 text-3xl hover:text-blue-800 transition">
+                    <i class="fab fa-facebook"></i>
+                </a>
+                <!-- Instagram -->
+                <a href="https://instagram.com" target="_blank" rel="noopener noreferrer"
+                    class="text-pink-600 text-3xl hover:text-pink-800 transition">
+                    <i class="fab fa-instagram"></i>
+                </a>
+                <!-- YouTube -->
+                <a href="https://youtube.com" target="_blank" rel="noopener noreferrer"
+                    class="text-red-600 text-3xl hover:text-red-800 transition">
+                    <i class="fab fa-youtube"></i>
+                </a>
+                <!-- LinkedIn -->
+                <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer"
+                    class="text-blue-700 text-3xl hover:text-blue-900 transition">
+                    <i class="fab fa-linkedin"></i>
+                </a>
+            </div>
+            <p class="text-sm mt-4">&copy; 2025 Sanroque Laboratory. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        const subOptions = {
+            patient: [
+                "Ask a question about a standing order / confirm order is ready",
+                "Contact Customer Service",
+                "Get test results",
+                "Pay a bill, review payment, or update insurance"
+            ],
+            hospital: [
+                "Ask a question about a service or product",
+                "Get billing assistance",
+                "Track a specimen"
+            ],
+            professional: [
+                "Request Material Safety Data Sheets (MSDS)",
+                "Update your account information"
+            ],
+            collection: [
+                "Order supplies",
+                "Schedule specimen pickup by courier"
+            ]
+        };
+
+        document.getElementById("mainCategory").addEventListener("change", function () {
+            const selectedCategory = this.value;
+            const subCategory = document.getElementById("subCategory");
+            const subCategoryContainer = document.getElementById("subCategoryContainer");
+            const helpTopics = document.getElementById("helpTopics");
+
+            subCategory.innerHTML = '<option value="">-- Select --</option>';
+
+            if (selectedCategory && subOptions[selectedCategory]) {
+                subOptions[selectedCategory].forEach(option => {
+                    const newOption = document.createElement("option");
+                    newOption.textContent = option;
+                    subCategory.appendChild(newOption);
+                });
+                subCategoryContainer.classList.remove("hidden");
+                helpTopics.classList.add("hidden");
+            } else {
+                subCategoryContainer.classList.add("hidden");
+                helpTopics.classList.remove("hidden");
+            }
+        });
+
+        function toggleCollapse(id, button) {
+            const section = document.getElementById(id);
+            section.classList.toggle("hidden");
+            button.querySelector("span").textContent = section.classList.contains("hidden") ? "+" : "-";
+        }
+
+        document.getElementById("contactForm").addEventListener("submit", function (event) {
+            event.preventDefault();
+            fetch(this.action, {
+                method: this.method,
+                body: new FormData(this),
+                headers: { 'Accept': 'application/json' }
+            }).then(response => {
+                if (response.ok) {
+                    document.getElementById("successMessage").classList.remove("hidden");
+                    this.reset();
+                }
+            });
+        });
+
+        document.getElementById("contactForm").addEventListener("submit", function (event) {
+            event.preventDefault(); // Prevent default form submission
+
+            const form = this;
+            const formData = new FormData(form);
+            const successModal = document.getElementById("successModal");
+            const successText = document.getElementById("successText");
+            const loadingSpinner = document.getElementById("loadingSpinner");
+            const successIcon = document.getElementById("successIcon");
+            const iconWrapper = document.getElementById("iconWrapper");
+
+            // Show popup modal
+            successModal.classList.remove("hidden");
+            successModal.classList.add("animate-popup");
+
+            // Reset initial state
+            successText.textContent = "Sending...";
+            loadingSpinner.classList.remove("hidden");
+            successIcon.classList.add("hidden");
+            iconWrapper.classList.remove("border-green-600");
+
+            fetch(form.action, {
+                method: form.method,
+                body: formData,
+                headers: { 'Accept': 'application/json' }
+            })
+                .then(response => {
+                    if (response.ok) {
+                        // After 2 seconds, replace spinner with checkmark
+                        setTimeout(() => {
+                            loadingSpinner.classList.add("hidden");
+                            successIcon.classList.remove("hidden");
+                            successIcon.classList.add("animate-check");
+                            iconWrapper.classList.add("border-green-600"); // Make border green
+                        }, 2000);
+
+                        // After 3 seconds, show success message
+                        setTimeout(() => {
+                            successText.textContent = "Message Sent Successfully!";
+                            form.reset(); // Reset form
+                        }, 3000);
+
+                        // After 5 seconds, hide modal
+                        setTimeout(() => {
+                            successModal.classList.add("hidden");
+                        }, 5000);
+                    } else {
+                        alert("Something went wrong. Please try again.");
+                    }
+                })
+                .catch(error => {
+                    alert("There was an error submitting the form.");
+                });
+        });
+
+        function loadHTML(file, elementId) {
+            fetch(file)
+                .then(response => response.text())
+                .then(data => document.getElementById(elementId).innerHTML = data)
+                .catch(error => console.error('Error loading the file:', error));
+        }
+
+        window.onload = function () {
+            loadHTML('header.html', 'headerContainer');
+            loadHTML('footer.html', 'footerContainer');
+        };
+    </script>
+
+</body>
+
+</html>

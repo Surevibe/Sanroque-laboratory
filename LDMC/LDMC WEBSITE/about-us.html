@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - Sanroque Laboratory</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="bg-gray-100">
+
+    <div id="headerContainer"></div> <!-- Header Placeholder -->
+
+    <div class="max-w-5xl mx-auto px-4 py-10">
+        <h1 class="text-center text-2xl font-bold text-green-700 my-6">About Us</h1>
+        <p class="text-center text-gray-600 text-lg mb-8">
+            Shalom is dedicated to delivering top-notch medical services with a focus on accuracy, efficiency, and compassion.
+        </p>
+
+        <!-- Grid Section -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <!-- Card Items -->
+            <div class="bg-white shadow-md p-6 rounded-lg flex items-start gap-4">
+                <img src="assets/logo1.png" alt="Company Icon" class="w-10 h-10"> 
+                <div>
+                    <h2 class="text-blue-600 font-bold text-lg">Company</h2>
+                    <p class="text-gray-600">Top-notch medical services with a focus on accuracy, efficiency, and compassion. Learn more about our mission, values, and history.</p>
+                </div>
+            </div>
+
+            <div class="bg-white shadow-md p-6 rounded-lg flex items-start gap-4">
+                <img src="assets/logo.png" alt="Our Team Icon" class="w-10 h-10">
+                <div>
+                    <h2 class="text-blue-600 font-bold text-lg">Our Team</h2>
+                    <p class="text-gray-600">Meet the dedicated professionals behind Shalom who are committed to providing exceptional healthcare services.</p>
+                </div>
+            </div>
+
+            <div class="bg-white shadow-md p-6 rounded-lg flex items-start gap-4">
+                <img src="assets/logo.png" alt="Branches Icon" class="w-10 h-10">
+                <div>
+                    <h2 class="text-blue-600 font-bold text-lg">Branches</h2>
+                    <p class="text-gray-600">Find the location nearest to you for easy access to our comprehensive medical services.</p>
+                </div>
+            </div>
+
+            <div class="bg-white shadow-md p-6 rounded-lg flex items-start gap-4">
+                <img src="assets/logo.png" alt="Careers Icon" class="w-10 h-10">
+                <div>
+                    <h2 class="text-blue-600 font-bold text-lg">Careers</h2>
+                    <p class="text-gray-600">Explore our current job openings and learn more about career opportunities with us.</p>
+                </div>
+            </div>
+
+            <div class="bg-white shadow-md p-6 rounded-lg flex items-start gap-4">
+                <img src="assets/logo.png" alt="News & Events Icon" class="w-10 h-10">
+                <div>
+                    <h2 class="text-blue-600 font-bold text-lg">News & Events</h2>
+                    <p class="text-gray-600">Stay updated with the latest news, events, and developments.</p>
+                </div>
+            </div>
+
+            <div class="bg-white shadow-md p-6 rounded-lg flex items-start gap-4">
+                <img src="assets/logo.png" alt="Franchising Icon" class="w-10 h-10">
+                <div>
+                    <h2 class="text-blue-600 font-bold text-lg">Franchising</h2>
+                    <p class="text-gray-600">Become a part of our mission to provide exceptional healthcare services.</p>
+                </div>
+            </div>
+        </div>
+        <div class="max-w-5xl mx-auto px-4 py-10 text-center">
+            <!-- Back to Home Link -->
+            <a href="index.html" class="inline-block mb-6 px-4 py-2 text-white bg-green-600 rounded-lg shadow-md hover:bg-green-700 transition duration-300">
+                &larr; Back to Home
+            </a>
+        </div>
+    </div>
+
+    <footer class="bg-[#034c1f] text-white p-4 w-full">
+        <div class="flex flex-col items-center text-center">
+            <h3 class="text-lg font-bold text-white-700">Follow us on</h3>
+            <div class="flex justify-center gap-6 mt-3">
+                <!-- Facebook -->
+                <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" class="text-blue-600 text-3xl hover:text-blue-800 transition">
+                    <i class="fab fa-facebook"></i>
+                </a>
+                <!-- Instagram -->
+                <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" class="text-pink-600 text-3xl hover:text-pink-800 transition">
+                    <i class="fab fa-instagram"></i>
+                </a>
+                <!-- YouTube -->
+                <a href="https://youtube.com" target="_blank" rel="noopener noreferrer" class="text-red-600 text-3xl hover:text-red-800 transition">
+                    <i class="fab fa-youtube"></i>
+                </a>
+                <!-- LinkedIn -->
+                <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="text-blue-700 text-3xl hover:text-blue-900 transition">
+                    <i class="fab fa-linkedin"></i>
+                </a>
+            </div>
+            <p class="text-sm mt-4">&copy; 2025 Quest Diagnostics Incorporated. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        function loadHTML(file, elementId) {
+            fetch(file)
+                .then(response => response.text())
+                .then(data => document.getElementById(elementId).innerHTML = data)
+                .catch(error => console.error('Error loading the file:', error));
+        }
+
+        window.onload = function() {
+            loadHTML('header.html', 'headerContainer');
+            loadHTML('footer.html', 'footerContainer');
+        };
+    </script>
+</body>
+</html>

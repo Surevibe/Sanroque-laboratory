@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sanroque Laboratory</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body class="pt-24">
+    <header class="bg-white py-4 px-6 shadow-md flex justify-between items-center w-full fixed top-0 left-0 z-50">
+        <div class="flex items-center">
+            <a href="index.html">
+                <img src="assets/logo2.png" alt="logo" class="h-20">
+            </a>
+        </div>
+        <nav class="flex justify-center items-center gap-x-8">
+            <div class="relative group">
+                <a href="#" class="hover-underline">Patients</a>
+                <div id="patientContent"
+                    class="hidden absolute left-0 w-64 bg-gradient-to-b from-green-500 to-green-700 shadow-md p-4 group-hover:flex flex-col space-y-2 text-white">
+                    <a href="#">Get tested</a>
+                    <a href="#">Billing and insurance</a>
+                    <a href="#">Results</a>
+                    <a href="#">Blog</a>
+                    <a href="#">Shop</a>
+                </div>
+            </div>
+
+            <div class="relative group">
+                <a href="#" class="hover-underline">Healthcare Professionals</a>
+                <div id="healthcareContent"
+                    class="hidden absolute left-0 w-64 bg-gradient-to-b from-green-500 to-green-700 shadow-md p-4 group-hover:flex flex-col space-y-2 text-white">
+                    <a href="#">Healthcare resources</a>
+                    <a href="#">Medical Support</a>
+                    <a href="#">Clinical Trials</a>
+                    <a href="#">Medical News</a>
+                    <a href="#">Professional Network</a>
+                </div>
+            </div>
+
+            <div class="relative group">
+                <a href="#" class="hover-underline">Laboratory Managers</a>
+                <div id="labManagerContent"
+                    class="hidden absolute left-0 w-64 bg-gradient-to-b from-green-500 to-green-700 shadow-md p-4 group-hover:flex flex-col space-y-2 text-white">
+                    <a href="#">Lab management tools</a>
+                    <a href="#">Inventory Tracking</a>
+                    <a href="#">Lab Testing Procedures</a>
+                    <a href="#">Compliance Resources</a>
+                    <a href="#">Lab Partnerships</a>
+                </div>
+            </div>
+
+            <div class="relative group">
+                <a href="#" class="hover-underline">Business Leaders</a>
+                <div id="businessContent"
+                    class="hidden absolute left-0 w-64 bg-gradient-to-b from-green-500 to-green-700 shadow-md p-4 group-hover:flex flex-col space-y-2 text-white">
+                    <a href="#">Business solutions</a>
+                    <a href="#">Strategic Partnerships</a>
+                    <a href="#">Enterprise Tools</a>
+                    <a href="#">Industry Insights</a>
+                    <a href="#">Financial Services</a>
+                </div>
+            </div>
+        </nav>
+        <div class="flex space-x-4">
+            <div class="flex items-center bg-white px-2 py-1 rounded-full shadow-sm border border-gray-300 w-32">
+                <input type="text" placeholder="🔍 Search"
+                    class="w-full text-gray-700 outline-none bg-transparent text-xs px-2">
+            </div>
+            <a href="login.html" class="text-gray-700 hover:text-green-700">🔑 Log In</a>
+            <a href="contact.html" class="text-gray-700 hover:text-green-700">📞 Contact</a>
+        </div>
+
+    </header>
+
+    <!-- Hero Section -->
+    <section class="bg-green-900 text-white flex flex-col md:flex-row items-center px-6 md:px-20 py-10 mt pt-23">
+        <div class="w-full md:w-1/2 text-left">
+            <h1 class="text-2xl md:text-4xl font-bold text-left">Love yourself enough to check in. Shop 25% off lab
+                tests.</h1>
+            <button
+                class="bg-white text-green-800 font-bold px-6 py-2 mt-4 rounded btn-hover text-left">sanroquelab.com</button>
+            <p class="text-sm mt-3 text-left">Sanroque Laboratory™ comes to you. Skip the trip with in-home sample
+                collection.</p>
+        </div>
+        <div class="w-full md:w-1/2 flex justify-center">
+            <img src="https://s7d6.scene7.com/is/image/questdiagnostics/Self-Love-Self-Care-2025"
+                alt="Lab Test Promotion" class="rounded-lg shadow-lg">
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="grid grid-cols-1 md:grid-cols-4 gap-6 p-6 md:p-20">
+        <div class="bg-white p-6 shadow-md text-center rounded-lg hover:shadow-xl transition-all hover:bg-green-100">
+            <p class="text-xl font-semibold hover:text-green-700">📅 Schedule tests</p>
+        </div>
+        <div class="bg-white p-6 shadow-md text-center rounded-lg hover:shadow-xl transition-all hover:bg-green-100 cursor-pointer"
+            onclick="openGoogleMaps()">
+            <p class="text-xl font-semibold hover:text-green-700">📍 Find Directions</p>
+        </div>
+        <div class="bg-white p-6 shadow-md text-center rounded-lg hover:shadow-xl transition-all hover:bg-green-100">
+            <p class="text-xl font-semibold hover:text-green-700">📄 Get my results</p>
+        </div>
+        <div class="bg-white p-6 shadow-md text-center rounded-lg hover:shadow-xl transition-all hover:bg-green-100">
+            <p class="text-xl font-semibold hover:text-green-700">💳 Pay my bill or update insurance</p>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <div class="container mx-auto px-4 py-10 flex justify-center gap-6">
+
+
+        <!-- Schedule Now Container -->
+        <div class="bg-white p-6 shadow-lg rounded-lg flex flex-col items-center w-1/3">
+            <h2 class="text-xl font-bold text-gray-800 mb-4">Schedule Now</h2>
+            <p class="text-gray-600 text-center mb-4">Book an appointment quickly and easily.</p>
+            <button id="openModal" class="bg-green-900 text-white px-6 py-2 rounded-lg">Schedule Now</button>
+        </div>
+
+        <!-- Modal (Hidden by Default) -->
+        <div id="scheduleModal" class="fixed inset-0 bg-gray-900 bg-opacity-50 hidden flex items-center justify-center">
+            <div class="bg-white p-6 rounded-lg w-3/5">
+                <h2 class="text-lg font-bold text-gray-800 mb-4">Book an Appointment</h2>
+
+                <!-- Form -->
+                <form class="grid grid-cols-2 gap-4">
+                    <!-- Left Column -->
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700">Schedule Date</label>
+                        <input type="date" class="w-full p-2 border rounded-lg mb-3">
+
+                        <label class="block text-sm font-medium text-gray-700">First Name</label>
+                        <input type="text" class="w-full p-2 border rounded-lg mb-3" placeholder="Enter first name">
+
+                        <label class="block text-sm font-medium text-gray-700">Middle Name</label>
+                        <input type="text" class="w-full p-2 border rounded-lg mb-3" placeholder="Enter middle name">
+                    </div>
+
+                    <!-- Right Column -->
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700">Last Name</label>
+                        <input type="text" class="w-full p-2 border rounded-lg mb-3" placeholder="Enter last name">
+
+                        <label class="block text-sm font-medium text-gray-700">Age</label>
+                        <input type="number" class="w-full p-2 border rounded-lg mb-3" placeholder="Enter age">
+
+                        <label class="block text-sm font-medium text-gray-700">Gender</label>
+                        <select class="w-full p-2 border rounded-lg mb-3">
+                            <option value="">Select Gender</option>
+                            <option value="Male">Male</option>
+                            <option value="Female">Female</option>
+                            <option value="Other">Other</option>
+                        </select>
+                    </div>
+
+                    <!-- Full Width Buttons -->
+                    <div class="col-span-2 flex justify-end space-x-2">
+                        <button type="button" id="closeModal"
+                            class="bg-gray-400 text-white px-4 py-2 rounded-lg">Cancel</button>
+                        <button type="submit" class="bg-green-900 text-white px-4 py-2 rounded-lg">Submit</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+
+
+        <!-- Find a Directions Container -->
+        <div class="bg-white p-6 shadow-lg rounded-lg flex flex-col items-center w-1/3">
+            <h2 class="text-xl font-bold text-gray-800 mb-4">Find a Direction</h2>
+            <p class="text-gray-600 text-center mb-4">Locate the nearest Quest Diagnostics center.</p>
+            <button class="bg-green-900 text-white px-6 py-2 rounded-lg">Get Directions</button>
+        </div>
+    </div>
+
+    <!-- The Latest From Quest -->
+    <div class="news-section">
+        <h2>The Latest From Quest</h2>
+
+        <!-- Tabs -->
+        <div class="tabs">
+            <button class="tab-btn active" onclick="openTab(event, 'contact')">Contact Us</button>
+            <button class="tab-btn" onclick="openTab(event, 'health')">Health & Wellness</button>
+            <button class="tab-btn" onclick="openTab(event, 'tech')">Technology & Innovation</button>
+            <button class="tab-btn" onclick="openTab(event, 'news')">News & Trends</button>
+        </div>
+
+        <!-- Community Section -->
+        <div id="contact" class="tab-content active">
+            <div class="news-card">
+                <img src="assets/images/community.jpg" alt="Contact Us">
+                <p class="category">ARTICLE</p>
+                <h3><a href="contact.html" class="underline-link">Contact Us</a></h3>
+            </div>
+            <div class="news-card">
+                <img src="assets/images/community.jpg" alt="Contact">
+                <p class="category">PUBLICATION</p>
+                <h3><a href="your-link-here" class="underline-link">Clinical and Economic Outcomes of a Pharmacogenomics
+                        Program</a></h3>
+            </div>
+            <div class="news-card">
+                <img src="assets/images/community.jpg" alt="Contact">
+                <p class="category">ARTICLE</p>
+                <h3><a href="your-link-here" class="underline-link">Growing something greater in Secaucus, NJ</a></h3>
+            </div>
+            <div class="news-card">
+                <img src="assets/images/community.jpg" alt="Contact ">
+                <p class="category">ARTICLE</p>
+                <h3><a href="your-link-here" class="underline-link">Summer Intern Spotlight: Hear what our interns
+                        learned!</a></h3>
+
+            </div>
+        </div>
+
+        <!-- Health & Wellness Section -->
+        <div id="health" class="tab-content">
+            <div class="news-card">
+                <img src="assets/images/health.jpg" alt="Health News">
+                <p class="category">CONFERENCE PRESENTATION</p>
+                <h3>New wellness programs launched nationwide</h3>
+            </div>
+            <div class="news-card">
+                <img src="assets/images/health.jpg" alt="Health News">
+                <p class="category">CONFERENCE PRESENTATION</p>
+                <h3>Impact of nutrition on employee productivity</h3>
+            </div>
+            <div class="news-card">
+                <img src="assets/images/health.jpg" alt="Health News">
+                <p class="category">CONFERENCE PRESENTATION</p>
+                <h3>Reducing stress with mindfulness programs</h3>
+            </div>
+            <div class="news-card">
+                <img src="assets/images/health.jpg" alt="Health News">
+                <p class="category">CONFERENCE PRESENTATION</p>
+                <h3>How regular exercise improves workplace morale</h3>
+            </div>
+        </div>
+
+        <!-- Technology & Innovation Section -->
+        <div id="tech" class="tab-content">
+            <div class="news-card">
+                <img src="assets/images/innovation.jpg" alt="Tech News">
+                <p class="category">ARTICLE</p>
+                <h3>AI-powered health diagnostics launched</h3>
+            </div>
+            <div class="news-card">
+                <img src="assets/images/innovation.jpg" alt="Tech News">
+                <p class="category">PUBLICATION</p>
+                <h3>How big data is transforming healthcare</h3>
+            </div>
+            <div class="news-card">
+                <img src="assets/images/innovation.jpg" alt="Tech News">
+                <p class="category">ARTICLE</p>
+                <h3>Future of telemedicine and remote consultations</h3>
+            </div>
+            <div class="news-card">
+                <img src="assets/images/innovation.jpg" alt="Tech News">
+                <p class="category">ARTICLE</p>
+                <h3>Wearable health tech trends for 2025</h3>
+            </div>
+        </div>
+
+        <!-- News & Trends Section -->
+        <div id="news" class="tab-content">
+            <div class="news-card">
+                <img src="assets/images/news.jpg" alt="News">
+                <p class="category">ARTICLE</p>
+                <h3>Latest trends in medical research</h3>
+            </div>
+            <div class="news-card">
+                <img src="assets/images/news.jpg" alt="News">
+                <p class="category">PUBLICATION</p>
+                <h3>Healthcare policies and their impact</h3>
+            </div>
+            <div class="news-card">
+                <img src="assets/images/news.jpg" alt="News">
+                <p class="category">ARTICLE</p>
+                <h3>Innovations in blood testing technology</h3>
+            </div>
+            <div class="news-card">
+                <img src="assets/images/news.jpg" alt="News">
+                <p class="category">ARTICLE</p>
+                <h3>How global health initiatives are evolving</h3>
+            </div>
+        </div>
+
+    </div>
+
+    <footer class="bg-[#034c1f] text-white p-6">
+        <!-- Added Content -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-10">
+            <div>
+                <h4 class="text-lg font-bold mb-2">Our Company</h4>
+                <ul>
+                    <li><a href="about-us.html" class="text-gray-300 hover:text-white relative hover-line">About us</a>
+                    </li>
+                    <li><a href="#" class="text-gray-300 hover:text-white relative hover-line">How we operate</a></li>
+                    <li><a href="#" class="text-gray-300 hover:text-white relative hover-line">What we do</a></li>
+                    <li><a href="#" class="text-gray-300 hover:text-white relative hover-line">Corporate
+                            responsibility</a></li>
+                    <li><a href="#" class="text-gray-300 hover:text-white relative hover-line">Inclusion and
+                            diversity</a></li>
+                    <li><a href="#" class="text-gray-300 hover:text-white relative hover-line">Actions and insights</a>
+                    </li>
+                    <li><a href="#" class="text-gray-300 hover:text-white relative hover-line">Suppliers</a></li>
+                    <li><a href="#" class="text-gray-300 hover:text-white relative hover-line">Shop tests</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="text-lg font-bold mb-2">Quick Links</h4>
+                <ul>
+                    <li><a href="#" class="text-gray-300 hover:text-white relative hover-line">Locations</a></li>
+                    <li><a href="#" class="text-gray-300 hover:text-white relative hover-line">Careers</a></li>
+                    <li><a href="#" class="text-gray-300 hover:text-white relative hover-line">Investors</a></li>
+                    <li><a href="#" class="text-gray-300 hover:text-white relative hover-line">Specialty Labs</a></li>
+                    <li><a href="#" class="text-gray-300 hover:text-white relative hover-line">Newsroom</a></li>
+                    <li><a href="#" class="text-gray-300 hover:text-white relative hover-line">Support</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="text-lg font-bold mb-2">Legal</h4>
+                <ul>
+                    <li><a href="#" class="text-gray-300 hover:text-white relative hover-line">Site map</a></li>
+                    <li><a href="#" class="text-gray-300 hover:text-white relative hover-line">Privacy Notices</a></li>
+                    <li><a href="#" class="text-gray-300 hover:text-white relative hover-line">Terms</a></li>
+                    <li><a href="#" class="text-gray-300 hover:text-white relative hover-line">Contact us</a></li>
+                    <li><a href="#" class="text-gray-300 hover:text-white relative hover-line">Language assistance /
+                            non-discrimination</a></li>
+                    <li><a href="#" class="text-gray-300 hover:text-white relative hover-line">Accessibility</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="mt-10 flex flex-col items-center text-center">
+            <h3 class="text-lg font-bold text-white-700">Follow us on</h3>
+            <div class="flex justify-center gap-6 mt-3">
+                <!-- Facebook -->
+                <a href="https://facebook.com" target="_blank" rel="noopener noreferrer"
+                    class="text-blue-600 text-3xl hover:text-blue-800 transition">
+                    <i class="fab fa-facebook"></i>
+                </a>
+                <!-- Instagram -->
+                <a href="https://instagram.com" target="_blank" rel="noopener noreferrer"
+                    class="text-pink-600 text-3xl hover:text-pink-800 transition">
+                    <i class="fab fa-instagram"></i>
+                </a>
+                <!-- YouTube -->
+                <a href="https://youtube.com" target="_blank" rel="noopener noreferrer"
+                    class="text-red-600 text-3xl hover:text-red-800 transition">
+                    <i class="fab fa-youtube"></i>
+                </a>
+                <!-- LinkedIn -->
+                <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer"
+                    class="text-blue-700 text-3xl hover:text-blue-900 transition">
+                    <i class="fab fa-linkedin"></i>
+                </a>
+            </div>
+            <p class="text-sm">&copy; 2025 Sanroque Laboratory. All rights reserved.</p>
+        </div>
+    </footer>
+
+
+    <!-- Link to the separate JavaScript file -->
+    <script src="script.js"></script>
+
+</body>
+
+</html>
